@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <title>Luxury Book Cabinet</title>
+</head>
+
+<body>
+    <nav class="navbar background h-nav-resp">
+        <ul class="nav-list v-class-resp">
+            <div class="logo"><img src="img/bg.jpg" alt="logo"></div>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#bestsellers">Best Sellers</a></li>
+            <li><a href="#stories">Stories</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+        <div class="rightNav v-class-resp">
+            <input type="text" name="search" id="search" placeholder="Search for Books...">
+            <button onclick="searchBook()" class="btn btn-sn">Search</button>
+            <p id="message"></p>
+
+        </div>
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+
+    <section class="background firstsection" id="home">
+        <div class="box-main">
+            <div class="firstHalf">
+                <p class="text-big">Efficient Book Finder</p>
+                <p class="text-small">"Efficient Book Finder" simplifies your quest for the perfect read. This comprehensive guide curates a diverse selection of books, offering concise summaries across genres to match your preferences swiftly. Whether it's fiction, non-fiction, self-help, or specialized interests, this guide streamlines your search, ensuring you discover your next captivating read without the hassle of extensive research.</p>
+                <div class="buttons">
+                    <!-- <button class="btn">Sign In</button>
+                    <button class="btn">Sign Up</button> -->
+                    <a href="signin.html"><button class="btn">Sign In</button></a>
+                    <a href="signup.html"><button class="btn">Sign Up</button></a>
+            
+
+                </div>
+            </div>
+
+            <div class="secondHalf">
+                <img src="img/img.jpg" alt="Book image">
+            </div>
+        </div>
+    </section>
+
+    <div class="categories-section" id="categories">
+        <div class="genre" onclick="showBooks('fiction')">
+            <img src="img/fiction.jpg" alt="Fiction">
+            <h2>Fiction</h2>
+        </div>
+
+        <div class="genre" onclick="showBooks('nonfiction')">
+            <img src="img/non-fiction.jpg" alt="Non-Fiction">
+            <h2>Non-Fiction</h2>
+        </div>
+
+        <div class="genre" onclick="showBooks('selfhelp')">
+            <img src="img/self-help.jpg" alt="Self-Help">
+            <h2>Self-Help</h2>
+        </div>
+
+        <div class="genre" onclick="showBooks('mystery')">
+            <img src="img/mystery.jpg" alt="Mystery">
+            <h2>Mystery</h2>
+        </div>
+
+        <div class="genre" onclick="showBooks('thriller')">
+            <img src="img/thriller.jpg" alt="Thriller">
+            <h2>Thriller</h2>
+        </div>
+        <!-- Add more genres here with their respective images -->
+    </div>
+    
+    <div id="books-container" class="books-container">
+        <!-- Books will be dynamically added here based on user selection -->
+    </div>
+
+     <!-- Quotes Slider -->
+     <section class="quotes" id="quotes">
+        <div id="quote-display">"A reader lives a thousand lives before he dies." - George R.R. Martin</div>
+    </section>
+
+
+    <div class="bestsellers-container" id="bestsellers">
+        <div class="book">
+            <img src="img/bestseller1.jpg" alt="">
+        </div>
+
+        <div class="book">
+            <img src="img/bestseller2.jpg" alt="">
+        </div>
+
+        <div class="book">
+            <img src="img/bestseller3.jpg" alt="">
+        </div>
+
+        <div class="book">
+            <img src="img/bestseller4.jpg" alt="">
+        </div>
+
+        <div class="book">
+            <img src="img/bestseller5.jpg" alt="">
+        </div>
+        <!-- Add 4 more books in this line -->
+    
+        <div class="book">
+            <img src="img/bestseller6.jpg" alt="">
+        </div>
+
+        <div class="book">
+            <img src="img/bestseller7.jpg" alt="">
+        </div>
+        <div class="book">
+            <img src="img/bestseller8.jpg" alt="">
+        </div>
+
+        <div class="book">
+            <img src="img/bestseller9.jpg" alt="">
+        </div>
+
+        <div class="book">
+            <img src="img/bestseller10.jpg" alt="">
+        </div>
+
+        <div class="book">
+            <img src="img/bestseller11.jpg" alt="">
+        </div>
+
+        <div class="book">
+            <img src="img/bestseller12.jpg" alt="">
+        </div>
+    </div>    
+
+    <section class="section" id="stories">
+        <div class="paras">
+        <p class="sectionTag text-big">"To Kill a Mockingbird" by Harper Lee:</p>
+        <p class="sectionSubTag text-small">Set in the fictional town of Maycomb, Alabama, during the 1930s, "To Kill a Mockingbird" is a poignant exploration of racial injustice and moral growth. The novel is narrated by Scout Finch, a young girl, and it revolves around her father, Atticus Finch, a lawyer defending Tom Robinson, a black man falsely accused of raping a white woman, Mayella Ewell.
+
+            The story unfolds as Scout, along with her brother Jem and friend Dill, becomes curious about Boo Radley, a mysterious neighbor rumored to be a recluse. At the same time, Atticus faces prejudice and backlash for defending Tom Robinson, challenging the deeply ingrained racial biases in the community.
+            
+            As the trial of Tom Robinson progresses, it becomes evident that the evidence points to his innocence. However, the racial tension in Maycomb prevails, leading to an unjust verdict. The novel skillfully explores the impact of racism on individuals and communities, as well as the complexities of morality and empathy.
+            
+            The narrative also encompasses Scout's coming-of-age journey, as she learns valuable life lessons about compassion, understanding, and the importance of standing up for what is right. The iconic character of Atticus Finch serves as a moral compass, imparting wisdom and integrity to his children and the readers.
+            
+            "To Kill a Mockingbird" remains a timeless classic, celebrated for its exploration of social issues, memorable characters, and powerful messages about justice and humanity.
+            
+            </p>
+        </div>
+        <div class="thumbnail">
+            <img src="img/reading.jpg" alt="book image" class="imgFluid">
+        </div>
+    </section>
+    
+    <section class="contact" id="contact">
+        <h1 class="text-center">Contact Us</h1>
+        <!-- <div class="form">
+            <input class="form-input" type="text" name="name" id="name" placeholder="Enter Your name">
+            <input class="form-input" type="text" name="phone" id="phone" placeholder="Enter Your Phone">
+            <input class="form-input" type="email" name="email" id="email" placeholder="Enter Your email">
+            <textarea class="form-input" name="text" id="text" cols="30" rows="10" placeholder="Ellaborate your concern"></textarea>
+            <button class="btn btn-sm btn-dark">Submit</button>
+        </div> -->
+        <form id="contact-form" onsubmit="return handleSubmit(event);">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" required></textarea>
+
+            <button class="btnc" type="submit">Send Message</button>
+        </form>
+        <div id="response-message"></div>
+    </section>
+
+    <footer class="background">
+        <p class="text-footer">
+            Copyright &copy; 2024 www.Luxurybookcabinet.com - All rights reserved
+        </p>
+    </footer>
+    <script src="js/resp.js"></script>
+    
+</body>
+
+</html>

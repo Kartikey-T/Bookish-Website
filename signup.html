@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        /* Reset & Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+            padding: 2.5rem;
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #1e3c72;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        input {
+            padding: 0.75rem 1rem;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #2a5298;
+            outline: none;
+        }
+
+        button {
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: 8px;
+            background-color: #2a5298;
+            color: #ffffff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #1e3c72;
+            transform: translateY(-2px);
+        }
+
+        .error {
+            color: #ff6b6b;
+            font-size: 0.9rem;
+            text-align: left;
+            margin-top: -0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .success-message {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #4caf50;
+            color: #ffffff;
+            padding: 1rem;
+            text-align: center;
+            transform: translateY(-100%);
+            transition: transform 0.5s;
+        }
+
+        .success-message.show {
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 500px) {
+            .container {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="successMessage" class="success-message">Sign Up Successful!</div>
+        <h1>Create Account</h1>
+        <form id="signUpForm">
+            <div>
+                <input type="text" id="name" placeholder="Full Name" required>
+                <div id="nameError" class="error"></div>
+            </div>
+            <div>
+                <input type="email" id="email" placeholder="Email Address" required>
+                <div id="emailError" class="error"></div>
+            </div>
+            <div>
+                <input type="password" id="password" placeholder="Password" required>
+                <div id="passwordError" class="error"></div>
+            </div>
+            <div>
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                <div id="confirmPasswordError" class="error"></div>
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <script>
+        const signUpForm = document.getElementById('signUpForm');
+        const successMessage = document.getElementById('successMessage');
+
+        signUpForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            let valid = true;
+
+            // Clear previous errors
+            document.querySelectorAll('.error').forEach(el => el.textContent = '');
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const confirmPassword = document.getElementById('confirmPassword').value.trim();
+
+            // Validate Name
+            if (name === "") {
+                document.getElementById('nameError').textContent = "Full Name is required.";
+                valid = false;
+            }
+
+            // Validate Email
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email === "") {
+                document.getElementById('emailError').textContent = "Email Address is required.";
+                valid = false;
+            } else if (!emailPattern.test(email)) {
+                document.getElementById('emailError').textContent = "Please enter a valid email.";
+                valid = false;
+            }
+
+            // Validate Password
+            if (password === "") {
+                document.getElementById('passwordError').textContent = "Password is required.";
+                valid = false;
+            } else if (password.length < 6) {
+                document.getElementById('passwordError').textContent = "Password must be at least 6 characters.";
+                valid = false;
+            }
+
+            // Validate Confirm Password
+            if (confirmPassword === "") {
+                document.getElementById('confirmPasswordError').textContent = "Please confirm your password.";
+                valid = false;
+            } else if (password !== confirmPassword) {
+                document.getElementById('confirmPasswordError').textContent = "Passwords do not match.";
+                valid = false;
+            }
+
+            if (valid) {
+                // Simulate form submission
+                signUpForm.reset();
+                successMessage.classList.add('show');
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 3000);
+            }
+        });
+    </script>
+    
+</body>
+</html>
